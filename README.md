@@ -1,6 +1,6 @@
 # Touch-Contract
 
-Creates a simple certificate-issuing smart contract in Solidity.
+Creates boilerplate smart contracts in Solidity.
 
 
 ## 🔑 Quick Start
