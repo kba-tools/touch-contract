@@ -1,6 +1,6 @@
 {
   "name": "@aka-demy/touch-contract",
-  "version": "1.2.0",
+  "version": "1.2.1",
   "description": "Creates a simple certificate-issuing smart contract in Solidity.",
   "bin": "./bin/cli.js",
   "scripts": {
