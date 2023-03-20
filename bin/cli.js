@@ -16,18 +16,52 @@ const askContract = async () => {
     type: "list",
     prefix: "◈ ",
     message: "\x1b[32mChoose a contract:\x1b[0m",
-    choices: [" Storage", " Cert", " NFT"],
+    choices: [" Storage", " Certificate", " NFT"],
   });
   return answers.contract;
 };
 
 const touchContract = async () => {
-  const contract_ = await askContract();
-  const contract = contract_.slice(1);
+  const contract = await askContract();
+
   try {
     mkdirpSync("./contracts");
-    copyFileSync(`${CONTRACT_DIR}/${contract}.sol`, `./contracts/${contract}.sol`);
-    console.log(`\x1b[36mCREATE\x1b[0m : ./contracts/${contract}.sol`);
+    switch (contract) {
+      case " Certificate":
+        copyFileSync(`${CONTRACT_DIR}/Cert.sol`, `./contracts/Cert.sol`);
+        console.log(`\x1b[36mCREATE\x1b[0m : ./contracts/Cert.sol`);
+        break;
+
+      case " NFT":
+        copyFileSync(`${CONTRACT_DIR}/Address.sol`, `./contracts/Address.sol`);
+        console.log(`\x1b[36mCREATE\x1b[0m : ./contracts/Address.sol`);
+        copyFileSync(`${CONTRACT_DIR}/ERC165.sol`, `./contracts/ERC165.sol`);
+        console.log(`\x1b[36mCREATE\x1b[0m : ./contracts/ERC165.sol`);
+        copyFileSync(`${CONTRACT_DIR}/ERC721.sol`, `./contracts/ERC721.sol`);
+        console.log(`\x1b[36mCREATE\x1b[0m : ./contracts/ERC721.sol`);
+        copyFileSync(`${CONTRACT_DIR}/IERC165.sol`, `./contracts/IERC165.sol`);
+        console.log(`\x1b[36mCREATE\x1b[0m : ./contracts/IERC165.sol`);
+        copyFileSync(`${CONTRACT_DIR}/IERC721.sol`, `./contracts/IERC721.sol`);
+        console.log(`\x1b[36mCREATE\x1b[0m : ./contracts/IERC721.sol`);
+        copyFileSync(
+          `${CONTRACT_DIR}/IERC721Metadata.sol`,
+          `./contracts/IERC721Metadata.sol`
+        );
+        console.log(`\x1b[36mCREATE\x1b[0m : ./contracts/IERC721Metadata.sol`);
+        copyFileSync(
+          `${CONTRACT_DIR}/IERC721Receiver.sol`,
+          `./contracts/IERC721Receiver.sol`
+        );
+        console.log(`\x1b[36mCREATE\x1b[0m : ./contracts/IERC721Receiver.sol`);
+        copyFileSync(`${CONTRACT_DIR}/NFT.sol`, `./contracts/NFT.sol`);
+        console.log(`\x1b[36mCREATE\x1b[0m : ./contracts/NFT.sol`);
+        break;
+
+      default:
+        copyFileSync(`${CONTRACT_DIR}/Storage.sol`, `./contracts/Storage.sol`);
+        console.log(`\x1b[36mCREATE\x1b[0m : ./contracts/Storage.sol`);
+        break;
+    }
   } catch (error) {
     console.log(`\x1b[31mFAIL\x1b[0m : ${error}`);
   }
