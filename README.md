@@ -2,9 +2,9 @@
 
 Creates boilerplate smart contracts in Solidity.
 
-1. Simple Storage
-2. Certificate Issuance
-3. Color NFT
+1. Storage
+2. Certificate
+3. NFT
 
 ## 🔑 Quick Start
 
