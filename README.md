@@ -1,10 +1,10 @@
 # Touch-Contract
 
-Creates boilerplate smart contracts in Solidity.
+Creates boilerplate smart contracts in Solidity & Vyper.
 
-1. Storage
-2. Certificate
-3. NFT
+1. Storage (Solidity & Vyper)
+2. Certificate (Solidity & Vyper)
+3. NFT (Solidity)
 
 ## 🔑 Quick Start
 
@@ -12,6 +12,6 @@ Creates boilerplate smart contracts in Solidity.
 npx @aka-demy/touch-contract
 ```
 
-## License
+## 📜 License
 
 Distributed under the MIT License.

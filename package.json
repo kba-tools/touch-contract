@@ -1,7 +1,7 @@
 {
   "name": "@aka-demy/touch-contract",
   "version": "1.3.0",
-  "description": "Creates a simple certificate-issuing smart contract in Solidity.",
+  "description": "Creates boilerplate smart contracts in Solidity & Vyper.",
   "bin": "./bin/cli.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
@@ -12,6 +12,7 @@
   },
   "keywords": [
     "solidity",
+    "vyper",
     "smart-contract",
     "ethereum",
     "javascript"

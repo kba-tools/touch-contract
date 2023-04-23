@@ -21,6 +21,17 @@ const askContract = async () => {
   return answers.contract;
 };
 
+const askLanguage = async () => {
+  const answers = await inquirer.prompt({
+    name: "language",
+    type: "list",
+    prefix: "◈ ",
+    message: "\x1b[32mChoose a language:\x1b[0m",
+    choices: [" Solidity", " Vyper"],
+  });
+  return answers.language;
+};
+
 const touchContract = async () => {
   const contract = await askContract();
 
@@ -28,38 +39,85 @@ const touchContract = async () => {
     mkdirpSync("./contracts");
     switch (contract) {
       case " Certificate":
-        copyFileSync(`${CONTRACT_DIR}/Cert.sol`, `./contracts/Cert.sol`);
-        console.log(`\x1b[36mCREATE\x1b[0m : ./contracts/Cert.sol`);
+        const clang = await askLanguage();
+        switch (clang) {
+          case " Vyper":
+            copyFileSync(
+              `${CONTRACT_DIR}/vyper/Cert.vy`,
+              `./contracts/Cert.vy`
+            );
+            console.log(`\x1b[36mCREATE\x1b[0m : ./contracts/Cert.vy`);
+            break;
+
+          default:
+            copyFileSync(
+              `${CONTRACT_DIR}/solidity/Cert.sol`,
+              `./contracts/Cert.sol`
+            );
+            console.log(`\x1b[36mCREATE\x1b[0m : ./contracts/Cert.sol`);
+            break;
+        }
         break;
 
       case " NFT":
-        copyFileSync(`${CONTRACT_DIR}/Address.sol`, `./contracts/Address.sol`);
+        copyFileSync(
+          `${CONTRACT_DIR}/solidity/Address.sol`,
+          `./contracts/Address.sol`
+        );
         console.log(`\x1b[36mCREATE\x1b[0m : ./contracts/Address.sol`);
-        copyFileSync(`${CONTRACT_DIR}/ERC165.sol`, `./contracts/ERC165.sol`);
+        copyFileSync(
+          `${CONTRACT_DIR}/solidity/ERC165.sol`,
+          `./contracts/ERC165.sol`
+        );
         console.log(`\x1b[36mCREATE\x1b[0m : ./contracts/ERC165.sol`);
-        copyFileSync(`${CONTRACT_DIR}/ERC721.sol`, `./contracts/ERC721.sol`);
+        copyFileSync(
+          `${CONTRACT_DIR}/solidity/ERC721.sol`,
+          `./contracts/ERC721.sol`
+        );
         console.log(`\x1b[36mCREATE\x1b[0m : ./contracts/ERC721.sol`);
-        copyFileSync(`${CONTRACT_DIR}/IERC165.sol`, `./contracts/IERC165.sol`);
+        copyFileSync(
+          `${CONTRACT_DIR}/solidity/IERC165.sol`,
+          `./contracts/IERC165.sol`
+        );
         console.log(`\x1b[36mCREATE\x1b[0m : ./contracts/IERC165.sol`);
-        copyFileSync(`${CONTRACT_DIR}/IERC721.sol`, `./contracts/IERC721.sol`);
+        copyFileSync(
+          `${CONTRACT_DIR}/solidity/IERC721.sol`,
+          `./contracts/IERC721.sol`
+        );
         console.log(`\x1b[36mCREATE\x1b[0m : ./contracts/IERC721.sol`);
         copyFileSync(
-          `${CONTRACT_DIR}/IERC721Metadata.sol`,
+          `${CONTRACT_DIR}/solidity/IERC721Metadata.sol`,
           `./contracts/IERC721Metadata.sol`
         );
         console.log(`\x1b[36mCREATE\x1b[0m : ./contracts/IERC721Metadata.sol`);
         copyFileSync(
-          `${CONTRACT_DIR}/IERC721Receiver.sol`,
+          `${CONTRACT_DIR}/solidity/IERC721Receiver.sol`,
           `./contracts/IERC721Receiver.sol`
         );
         console.log(`\x1b[36mCREATE\x1b[0m : ./contracts/IERC721Receiver.sol`);
-        copyFileSync(`${CONTRACT_DIR}/NFT.sol`, `./contracts/NFT.sol`);
+        copyFileSync(`${CONTRACT_DIR}/solidity/NFT.sol`, `./contracts/NFT.sol`);
         console.log(`\x1b[36mCREATE\x1b[0m : ./contracts/NFT.sol`);
         break;
 
       default:
-        copyFileSync(`${CONTRACT_DIR}/Storage.sol`, `./contracts/Storage.sol`);
-        console.log(`\x1b[36mCREATE\x1b[0m : ./contracts/Storage.sol`);
+        const slang = await askLanguage();
+        switch (slang) {
+          case " Vyper":
+            copyFileSync(
+              `${CONTRACT_DIR}/vyper/Storage.vy`,
+              `./contracts/Storage.vy`
+            );
+            console.log(`\x1b[36mCREATE\x1b[0m : ./contracts/Storage.vy`);
+            break;
+
+          default:
+            copyFileSync(
+              `${CONTRACT_DIR}/solidity/Storage.sol`,
+              `./contracts/Storage.sol`
+            );
+            console.log(`\x1b[36mCREATE\x1b[0m : ./contracts/Storage.sol`);
+            break;
+        }
         break;
     }
   } catch (error) {
