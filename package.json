@@ -1,5 +1,5 @@
 {
-  "name": "@aka-demy/touch-contract",
+  "name": "@kba-tools/touch-contract",
   "version": "2.1.1",
   "description": "Creates boilerplate smart contracts in Solidity & Vyper.",
   "bin": "./bin/cli.js",
@@ -8,7 +8,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/aka-demy/touch-contract.git"
+    "url": "git+https://github.com/kba-tools/touch-contract.git"
   },
   "keywords": [
     "solidity",
@@ -20,9 +20,9 @@
   "author": "Mobin Mohanan",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/aka-demy/touch-contract/issues"
+    "url": "https://github.com/kba-tools/touch-contract/issues"
   },
-  "homepage": "https://github.com/aka-demy/touch-contract#readme",
+  "homepage": "https://github.com/kba-tools/touch-contract#readme",
   "dependencies": {
     "inquirer": "^9.3.6",
     "mkdirp": "^2.1.6"

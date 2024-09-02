@@ -9,7 +9,7 @@ Creates boilerplate smart contracts in Solidity & Vyper.
 ## 🔑 Quick Start
 
 ```shell
-npx @aka-demy/touch-contract
+npx @kba-tools/touch-contract
 ```
 
 ## 📜 License
