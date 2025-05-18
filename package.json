@@ -24,8 +24,8 @@
   },
   "homepage": "https://github.com/kba-tools/touch-contract#readme",
   "dependencies": {
-    "inquirer": "^9.3.6",
-    "mkdirp": "^2.1.6"
+    "inquirer": "^12.6.1",
+    "mkdirp": "^3.0.1"
   },
   "type": "module"
 }
