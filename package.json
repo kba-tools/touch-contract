@@ -17,14 +17,14 @@
     "ethereum",
     "javascript"
   ],
-  "author": "Mobin Mohanan",
+  "author": "Kerala Blockchain Academy",
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/kba-tools/touch-contract/issues"
   },
   "homepage": "https://github.com/kba-tools/touch-contract#readme",
   "dependencies": {
-    "inquirer": "^12.9.1",
+    "inquirer": "^12.10.0",
     "mkdirp": "^3.0.1"
   },
   "type": "module"
