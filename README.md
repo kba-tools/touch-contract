@@ -1,17 +1,23 @@
-# Touch-Contract
+# Touch Contract
 
-Creates boilerplate smart contracts in Solidity & Vyper.
+**Touch Contract** is a command-line utility that generates boilerplate smart contracts in **Solidity** and **Vyper**, helping developers quickly scaffold common contract types for blockchain projects.
 
-1. Storage (Solidity & Vyper)
-2. Certificate (Solidity & Vyper)
-3. NFT (Solidity)
+## Supported Contract Templates
 
-## 🔑 Quick Start
+1. **Storage** — Solidity & Vyper
+2. **Certificate** — Solidity & Vyper
+3. **Auction** — Vyper
+4. **NFT** — Solidity
+5. **Voting** — Vyper
+
+## Quick Start
+
+Run the following command to generate a new smart contract template:
 
 ```shell
 npx @kba-tools/touch-contract
 ```
 
-## 📜 License
+## License
 
-Distributed under the MIT License.
+This project is distributed under the **MIT License**.
