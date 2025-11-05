@@ -1,6 +1,6 @@
 {
   "name": "@kba-tools/touch-contract",
-  "version": "3.1.0",
+  "version": "4.0.0",
   "description": "Creates boilerplate smart contracts in Solidity & Vyper.",
   "bin": "./bin/cli.js",
   "scripts": {
